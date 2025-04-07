@@ -22,7 +22,7 @@ bot.on('document', async (msg) => {
     const file = await bot.getFile(fileId);
     const fileUrl = `https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${file.file_path}`;
 
-    const filePath = path.join(__dirname, 'numeri_contatti.csv');
+    const filePath = path.join(__dirname, 'numeri.csv');
     const fileStream = fs.createWriteStream(filePath);
 
     https.get(fileUrl, (response) => {
